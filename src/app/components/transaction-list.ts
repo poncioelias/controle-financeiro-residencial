@@ -30,7 +30,8 @@ import { FormsModule } from '@angular/forms';
               <div class="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-xl border border-slate-200">
                 <span class="material-icons text-slate-400 text-sm">event</span>
                 <select 
-                  [(ngModel)]="filterMonth" 
+                  [ngModel]="filterMonth()"
+                  (ngModelChange)="filterMonth.set(+$event)"
                   class="bg-transparent text-sm font-medium text-slate-600 outline-none"
                 >
                   <option [value]="0">Todos os meses</option>
